@@ -49,11 +49,12 @@ To simulate an anisotropic quantum lattice without the computational overhead of
 
 The covariant metric tensor g_ij of the triclinic lattice is constructed directly from three independent lattice vectors (a, b, c) and three shearing angles (α, β, γ):
 
-          ┌                                     ┐
-          │     a²       ab·cos(γ)   ac·cos(β)  │
-   g_ij = │  ab·cos(γ)      b²       bc·cos(α)  │
-          │  ac·cos(β)   bc·cos(α)      c²      │
-          └                                     ┘
+      ┌                                     ┐
+      │     a²       ab·cos(γ)   ac·cos(β)  │
+g_ij = │  ab·cos(γ)      b²       bc·cos(α)  │
+│  ac·cos(β)   bc·cos(α)      c²      │
+└                                     ┘
+
 
 Spacetime events are transformed into standard Cartesian coordinates via an upper-triangular matrix contraction X = M · X_frac, allowing flat-space tensor network optimizers to evaluate the state.
 
@@ -61,7 +62,7 @@ Spacetime events are transformed into standard Cartesian coordinates via an uppe
 * **State Representation:** The quantum state of the lattice nodes is represented as a matrix product state (MPS).
 * **Strain Tracking:** As thermodynamic variables degrade across temporal epochs, the shearing angles are systematically modified. The resulting geometric tension is quantified as Quantum Metric Strain (σ), which tracks the deviation of the metric tensor from a standard Minkowski baseline η_ij:
 
-   σ = √[ (1/3) · ∑_i,j (g_ij - η_ij)² ]
+  `σ = √[ (1/3) · ∑_i,j (g_ij - η_ij)² ]`
 
 ### 3. Empirical Spherical Harmonic Pipeline
 The verification layer decouples from the simulation to ingest raw astronomical observation files. It translates the simulated directional lattice bias into predicted multipole angular scales using a spherical harmonic decomposition framework:
@@ -153,8 +154,6 @@ Macro-Scale Evidence: The detection of a directional temperature variance anomal
 
 📄 LICENSE
 This project is licensed under the MIT License - see the LICENSE file for open-source verification details.
-
-```
 
 
 ```
