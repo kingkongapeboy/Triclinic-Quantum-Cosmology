@@ -84,6 +84,14 @@ Follow these steps to set up the environment and run the computational models lo
 * Python 3.9 or higher
 * Git
 
+## 💻 ENVIRONMENT & LOCAL INSTALLATION
+
+Follow these steps to set up the environment and run the computational models locally:
+
+### Prerequisites
+* Python 3.9 or higher
+* Git
+
 ### Installation Pipeline
 
 1. **Clone the Repository:**
