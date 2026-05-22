@@ -17,9 +17,8 @@ Using an accelerated tensor network simulation, I successfully demonstrated that
 To test the internal mathematical consistency of this hypothesis, a 3D Fractional-to-Cartesian transformation engine was constructed. Spacetime coordinates were mapped using a metric tensor determined by three independent lengths and three shearing angles. The quantum state of the lattice nodes was modeled using a matrix contraction network.
 
 ### Source Files & Interactive Environments:
-
-* 📄 [View Interactive Workbook: simulation_sandbox.ipynb](https://www.google.com/search?q=simulation_sandbox.ipynb)
-* 🚀 [Launch Live Interactive Sandbox Environment on MyBinder](https://www.google.com/search?q=https://mybinder.org/v2/gh/kingkongapeboy/Triclinic-Quantum-Cosmology/main%3Flabpath%3Dsimulation_sandbox.ipynb)
+* 📄 [View Interactive Workbook: simulation_sandbox.ipynb](simulation_sandbox.ipynb)
+* 🚀 [Launch Live Interactive Sandbox Environment on MyBinder](https://mybinder.org/v2/gh/kingkongapeboy/Triclinic-Quantum-Cosmology/main?labpath=simulation_sandbox.ipynb)
 
 ```
                   [3D TRICLINIC COSMIC LIFE CYCLE]
