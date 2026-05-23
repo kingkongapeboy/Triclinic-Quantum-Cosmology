@@ -101,7 +101,7 @@ Follow these steps to set up the environment and run the computational models lo
 | Resource Type | Available Action |
 | :--- | :--- |
 | **Local Notebook** | [View Interactive Workbook](simulation_sandbox.ipynb) |
-| **Cloud Sandbox** | [Launch Live Environment on MyBinder](https://mybinder.org/) |
+| **Cloud Sandbox** | [Launch Live Environment on MyBinder]([https://mybinder.org/](https://mybinder.org/v2/gh/kingkongapeboy/Triclinic-Quantum-Cosmology/main?labpath=simulation_sandbox.ipynb)) |
 
 ### Installation Pipeline
 
