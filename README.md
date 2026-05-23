@@ -26,7 +26,7 @@ The repository is split into two primary pipelines: a Microscopic Simulation Pip
                               v
   +-------------------------------------------------------+
   |         3D Fractional-to-Cartesian Engine             |
-  |  - Calculates metric tensor from lattice vectors     |
+  |  - Calculates metric tensor from lattice vectors      |
   +-------------------------------------------------------+
                               |
                               v
@@ -51,40 +51,42 @@ The repository is split into two primary pipelines: a Microscopic Simulation Pip
                                 +--------------------------+
                                 | Initiate New Epoch Cycle |
                                 +--------------------------+
+```
 
-
-### 1. The Geometric Transformation Engine
-To simulate an anisotropic quantum lattice without the computational overhead of non-orthogonal coordinate calculations, the engine uses a Fractional-to-Cartesian transformation. 
+1. The Geometric Transformation Engine
+To simulate an anisotropic quantum lattice without the computational overhead of non-orthogonal coordinate calculations, the engine uses a Fractional-to-Cartesian transformation.
 
 The covariant metric tensor, denoted as g_ij, of the triclinic lattice is constructed directly from three independent lattice vectors (a, b, c) and three shearing angles (alpha, beta, gamma):
 
-    g_11 = a squared
-    g_12 = a * b * cos(gamma)
-    g_13 = a * c * cos(beta)
-    g_21 = a * b * cos(gamma)
-    g_22 = b squared
-    g_23 = b * c * cos(alpha)
-    g_31 = a * c * cos(beta)
-    g_32 = b * c * cos(alpha)
-    g_33 = c squared
+```text
+g_11 = a^2
+g_12 = a * b * cos(gamma)
+g_13 = a * c * cos(beta)
+g_21 = a * b * cos(gamma)
+g_22 = b^2
+g_23 = b * c * cos(alpha)
+g_31 = a * c * cos(beta)
+g_32 = b * c * cos(alpha)
+g_33 = c^2
+```
+Spacetime events are transformed into standard Cartesian coordinates via an upper-triangular matrix contraction where X = M * X_frac, allowing flat-space tensor network optimizers to evaluate the state.
 
-Spacetime events are transformed into standard Cartesian coordinates via an upper-triangular matrix contraction where X equals M multiplied by X_frac, allowing flat-space tensor network optimizers to evaluate the state.
+2. Matrix Contraction & Quantum Metric Strain
+State Representation: The quantum state of the lattice nodes is represented as a matrix product state (MPS).
 
-### 2. Matrix Contraction & Quantum Metric Strain
-* State Representation: The quantum state of the lattice nodes is represented as a matrix product state (MPS).
-* Strain Tracking: As thermodynamic variables degrade across temporal epochs, the shearing angles are systematically modified. The resulting geometric tension is quantified as Quantum Metric Strain, which tracks the deviation of the metric tensor from a standard Minkowski baseline.
+Strain Tracking: As thermodynamic variables degrade across temporal epochs, the shearing angles are systematically modified. The resulting geometric tension is quantified as Quantum Metric Strain, which tracks the deviation of the metric tensor from a standard Minkowski baseline.
 
-### 3. Empirical Spherical Harmonic Pipeline
+3. Empirical Spherical Harmonic Pipeline
 The verification layer decouples from the simulation to ingest raw astronomical observation files. It translates the simulated directional lattice bias into predicted multipole angular scales using a spherical harmonic decomposition framework:
 
+```text
 [ Raw CMB FITS Data ] ──> [ Healpy Anisotropy Mask ] ──> [ Cl Power Spectrum Engine ] ──> [ Significance Test ]
+```
+Ingestion: Parses raw spacecraft data from FITS files using the healpy library.
 
+Anisotropy Masking: Applies galactic plane masks to eliminate low-frequency foreground contamination.
 
-* Ingestion: Parses raw spacecraft data from FITS files using the healpy library.
-* Anisotropy Masking: Applies galactic plane masks to eliminate low-frequency foreground contamination.
-* Multipole Estimation: Decomposes the temperature fluctuations into spherical harmonics to compute the angular power spectrum coefficients, targeting large angular scales where l is less than 10 to test lattice compliance.
-
----
+Multipole Estimation: Decomposes the temperature fluctuations into spherical harmonics to compute the angular power spectrum coefficients, targeting large angular scales where l <= 10 to test lattice compliance.
 
 ## 💻 ENVIRONMENT AND LOCAL INSTALLATION
 
@@ -95,34 +97,49 @@ Follow these steps to set up the environment and run the computational models lo
 * Git
 
 ### Project Resources
-* [View Interactive Workbook](./simulation_sandbox.ipynb)
-* [Launch Live Interactive Sandbox Environment on MyBinder](https://mybinder.org/)
+
+| Resource Type | Available Action |
+| :--- | :--- |
+| **Local Notebook** | [View Interactive Workbook](simulation_sandbox.ipynb) |
+| **Cloud Sandbox** | [Launch Live Environment on MyBinder](https://mybinder.org/) |
 
 ### Installation Pipeline
 
 1. Clone the Repository:
-```bash
+   ```bash
+   git clone https://github.com/kingkongapeboy/Triclinic-Quantum-Cosmology.git
+   cd Triclinic-Quantum-Cosmology
+
+```text
+Bash
    git clone [https://github.com/kingkongapeboy/Triclinic-Quantum-Cosmology.git](https://github.com/kingkongapeboy/Triclinic-Quantum-Cosmology.git)
    cd Triclinic-Quantum-Cosmology
+```
 Environment Isolation:
 
+```text
 Bash
    python -m venv venv
    source venv/bin/activate
+```
 Install Dependencies:
 
+```text
 Bash
    pip install --upgrade pip
    pip install -r requirements.txt
+```
 Launch Interactive Environment:
 
+```text
 Bash
    jupyter notebook simulation_sandbox.ipynb
+```
 SIMULATION EXECUTION AND VERIFICATION
 Computational Simulation Output Log
 When running the local testing script, the state machine updates sequentially through thermodynamic degradation epochs:
 
-Plaintext
+```text
 COSMIC INITIALIZATION: T=1000.0K | Entropy=0.1 | Geometry=Orthogonal (90°)
 ========================================================================
 [Epoch 1] Temp: 100.0000K | Entropy:  25.1 | Angles: (α=80.0°, β=83.0°, γ=78.0°) | Metric Strain: 0.0727
@@ -145,8 +162,9 @@ New Epoch 0 Initial State:
 -> Reset Cosmic Entropy    : 0.1 (Perfect Order)
 -> Quantum Metric Strain   : 0.0000 (Restored to Baseline Flatness)
 ========================================================================
+```
 Empirical Data Pipeline Analysis Log
-Plaintext
+```text
 ========================================================================
 ►► EMPIRICAL ANALYSIS COMPLETE ◄◄
 ========================================================================
@@ -159,12 +177,15 @@ Plaintext
 STATUS: HYPOTHESIS VALIDATED. Anisotropic signature detected in raw 
         observational data maps, confirming structural symmetry alignment.
 ========================================================================
-DISCUSSION AND SCIENTIFIC IMPLICATIONS
-Resolution of Singularities: By replacing smooth spacetime with a discrete 3-D triclinic network, gravitational singularities are naturally regularized. The metric strain curves smoothly upward to a finite maximum value of 0.2294. This avoids the infinite mass-density cliffs encountered by classical General Relativity.
+```
+## DISCUSSION AND SCIENTIFIC IMPLICATIONS
 
-Solution to the Entropy Paradox: Standard cyclic models suffer from the thermodynamic degradation problem where each successive cycle grows larger and longer due to accumulated remnants. This framework utilizes a Conformal Scale Factor Inversion operation at the absolute zero boundary. This completely resets global cosmic entropy from a chaotic 125.1 back to a pristine 0.1 baseline to ensure a stable, infinite series of universal lifecycles.
+• **Resolution of Singularities:** By replacing smooth spacetime with a discrete 3-D triclinic network, gravitational singularities are naturally regularized. The metric strain curves smoothly upward to a finite maximum value of 0.2294. This avoids the infinite mass-density cliffs encountered by classical General Relativity.
 
-Macro-Scale Evidence: The detection of a directional temperature variance anomaly of plus 150 micro-Kelvin squared at the multipole scale of l equals 7 indicates that the macro-universe preserves a structural memory of its microscopic, crystalline origin. Spacetime emerges out of an actively entangled, thermodynamic quantum fabric.
+• **Solution to the Entropy Paradox:** Standard cyclic models suffer from the thermodynamic degradation problem where each successive cycle grows larger and longer due to accumulated remnants. This framework utilizes a Conformal Scale Factor Inversion operation at the absolute zero boundary. This completely resets global cosmic entropy from a chaotic 125.1 back to a pristine 0.1 baseline to ensure a stable, infinite series of universal lifecycles.
 
-LICENSE INFORMATION
-This repository is open-source software. The project is licensed under the terms of the standard MIT License. Please see the separate text file named LICENSE within this project directory for the full terms and verification details.
+• **Macro-Scale Evidence:** The detection of a directional temperature variance anomaly of plus 150 micro-Kelvin squared at the multipole scale of l equals 7 indicates that the macro-universe preserves a structural memory of its microscopic, crystalline origin. Spacetime emerges out of an actively entangled, thermodynamic quantum fabric.
+
+## LICENSE INFORMATION
+
+• This repository is open-source software. The project is licensed under the terms of the standard MIT License. Please see the separate text file named LICENSE within this project directory for the full terms and verification details.
