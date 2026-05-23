@@ -88,6 +88,28 @@ Anisotropy Masking: Applies galactic plane masks to eliminate low-frequency fore
 
 Multipole Estimation: Decomposes the temperature fluctuations into spherical harmonics to compute the angular power spectrum coefficients, targeting large angular scales where l <= 10 to test lattice compliance.
 
+🌌 THEORETICAL FRAMEWORK: CLASSICAL LIMITS & THE COSMIC BOUNCE
+While this project utilizes a discrete 3D triclinic spacetime lattice simulated via tensor networks, its macro-evolutionary behavior maintains a strict correspondence with classical physics before resolving the high-energy limits where standard theory breaks down.
+
+1. Macro-Scale Evolution (The Newtonian Regime)
+During the cosmic contraction phase, the macroscopic behavior of the universe is governed by a pseudo-Newtonian gravitational limit. As the system contracts, the gravitational restoring force acting on the collective mass-energy scales inversely with the system radius (r):
+
+F = -G * (m1 * m2) / r²
+
+As r → 0, classical mechanics predicts a singularity where gravitational force and acceleration approach infinity (F → ∞), resulting in a terminal Big Crunch.
+
+2. Micro-Scale Correction (The Tensor Network Boundary)
+To prevent mathematical divergence, this simulation introduces a discrete triclinic spatial lattice at ultra-high densities. As the universe approaches near-Planck scales, the geometry introduces a non-linear quantum pressure that acts as a stiff mechanical spring:
+
+F_bounce = -k * x  (where x represents lattice compression)
+
+3. Evolutionary Phase Transition
+The simulation handles the boundary transition by passing the macro-scale acceleration vector into the tensor network once a critical density threshold is crossed:
+
+Classical Collapse (F ∝ 1/r²) ──> Lattice Compression ──> Quantum Bounce (F_bounce)
+
+By utilizing tensor networks to compute the compressed geometric potential, the model successfully smooths a classical gravitational singularity into a stable, cyclic cosmic expansion.
+
 ## 💻 ENVIRONMENT AND LOCAL INSTALLATION
 
 Follow these steps to set up the environment and run the computational models locally:
@@ -160,7 +182,7 @@ COSMIC INITIALIZATION: T=1000.0K | Entropy=0.1 | Geometry=Orthogonal (90°)
 New Epoch 0 Initial State:
 -> Reborn Temperature      : 1000.0K (Infinite Heat Singularity)
 -> Reset Cosmic Entropy    : 0.1 (Perfect Order)
--> Quantum Metric Strain   : 0.0000 (Restored to Baseline Flatness)
+-> Quantum Metric Strain   : 0.0000 (Restored to Newtonian/Minkowski Baseline)
 ========================================================================
 ```
 Empirical Data Pipeline Analysis Log
@@ -180,7 +202,10 @@ STATUS: HYPOTHESIS VALIDATED. Anisotropic signature detected in raw
 ```
 ## DISCUSSION AND SCIENTIFIC IMPLICATIONS
 
-• **Resolution of Singularities:** By replacing smooth spacetime with a discrete 3-D triclinic network, gravitational singularities are naturally regularized. The metric strain curves smoothly upward to a finite maximum value of 0.2294. This avoids the infinite mass-density cliffs encountered by classical General Relativity.
+• **Resolution of Singularities:** By replacing smooth spacetime with a discrete 3-D 
+triclinic network, gravitational singularities are naturally regularized. The metric 
+strain curves smoothly upward to a finite maximum value of 0.2294, completely avoiding 
+the infinite mass-density cliffs encountered by classical Newtonian gravity and General Relativity.
 
 • **Solution to the Entropy Paradox:** Standard cyclic models suffer from the thermodynamic degradation problem where each successive cycle grows larger and longer due to accumulated remnants. This framework utilizes a Conformal Scale Factor Inversion operation at the absolute zero boundary. This completely resets global cosmic entropy from a chaotic 125.1 back to a pristine 0.1 baseline to ensure a stable, infinite series of universal lifecycles.
 
