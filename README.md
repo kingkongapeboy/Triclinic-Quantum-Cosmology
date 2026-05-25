@@ -124,6 +124,7 @@ Follow these steps to set up the environment and run the computational models lo
 | :--- | :--- |
 | **Local Notebook** | [View Interactive Workbook](simulation_sandbox.ipynb) |
 | **Cloud Sandbox** | [Launch Live Environment on MyBinder](https://mybinder.org/v2/gh/kingkongapeboy/Triclinic-Quantum-Cosmology/main?labpath=simulation_sandbox.ipynb) |
+| **Google Colab** Some Cool 3D and Interactive Things | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1X-8W4soYzprC1xY1aLgwTXuvSx2bvPnB?usp=sharing) |
 
 ### Installation Pipeline
 
