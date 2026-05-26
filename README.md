@@ -131,7 +131,8 @@ Follow these steps to set up the environment and run the computational models lo
 -Physics Engine
 - Interactable Cycles of Cosmological Objects
 -Just open in a new tab!
--MUST SEE!!!
+!!MUST SEE!!!
+- **Recommended Settings** For **Best Visuals** = Reset, Then Change P.F.I. Loop Speed: 3, Wave Turbulence: 0.3
 ```
 
 
