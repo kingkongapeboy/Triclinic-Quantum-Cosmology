@@ -127,13 +127,21 @@ Follow these steps to set up the environment and run the computational models lo
 | **Google Colab** Some Cool 3D and Interactive Things | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1X-8W4soYzprC1xY1aLgwTXuvSx2bvPnB?usp=sharing) |
 | **Live Web App** | [View Cosmic Simulatior](https://kingkongapeboy.github.io/cosmic-simulator/) | 
 ```text
-!!!HIGHLY RECOMMEND VIEWING THE COSMIC SIMULATOR!!!
--Physics Engine
-- Interactable Cycles of Cosmological Objects
--Just open in a new tab!
-!!MUST SEE!!!
-- **Recommended Settings** For **Best Visuals** = Reset, Then Change P.F.I. Loop Speed: 3, Wave Turbulence: 0.3
+------------------------------------------------------------------------------------------------------------------
+***  HIGHLY RECOMMEND VIEWING THE COSMIC SIMULATOR  ***
+  -Physics Engine
+  - Interactable Cycles of Cosmological Objects
+  -Just open in a new tab!
+------------------------------------------------------------------------------------------------------------------
+*** MUST SEE  ***
+  - !!Recommended Settings For Best Visuals!! = Reset, Then Change P.F.I. Loop Speed: 3, Wave Turbulence: 0.3
+------------------------------------------------------------------------------------------------------------------
 ```
+## COSMIC SIMULATOR SAMPLE IMAGES
+<img width="1920" height="992" alt="Electromagnetic_Spectrum_Example_Image" src="https://github.com/user-attachments/assets/cfdcfe95-231a-4301-a57a-b2b936c95b7e" />
+<img width="1920" height="992" alt="Earth_Example_Image" src="https://github.com/user-attachments/assets/2168ba1f-4f94-4452-8d7b-a4a057e66328" />
+<img width="1920" height="992" alt="BlackHole_Example_Image" src="https://github.com/user-attachments/assets/0e5bdaa7-18e2-4a7d-b96e-5eaa315649cf" />
+
 
 
 ### Installation Pipeline
